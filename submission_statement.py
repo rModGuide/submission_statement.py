@@ -11,11 +11,9 @@ from datetime import datetime as dt, timedelta as td, date
 
 # Set Variables
 
-RGX_CHAR_200 = r'.{200}'     # Don't touch if you don't understand
+RGX_CHAR_200 = r'.{200}'     # This searches for a character count of 200 characters.  Change this to chane your search criteria.
 
 SUB_NAME    = 'SUBREDDITNAME'    # Set subreddit here.  To work on multiple subs, separate them by a plus: 'subreddit+subreddit+subreddit'
-
-USER_AGENT  =       # Info for reddit API
 
 MINIMUM_HOURS = 1       # Number of hours a post must be old
 
@@ -73,7 +71,7 @@ def check_submissions(submissions, valid_posts):
         post_time = dt.utcfromtimestamp(ts)
 
         # Skip any post before today
-        if post_time <= dt(2020, 7, 23, 0, 0):
+        if post_time <= dt(2022, 4, 30, 0, 0):
             continue
 
         # Print a line break between each post
