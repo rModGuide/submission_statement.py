@@ -11,7 +11,7 @@ from datetime import datetime as dt, timedelta as td, date
 
 # Set Variables
 
-RGX_CHAR_200 = r'.{200}'     # This searches for a character count of 200 characters.  Change this to chane your search criteria.
+RGX_CHAR_200 = r'.{200}'     Regex character count of 200 characters.  Change this to change your search criteria.  
 
 SUB_NAME    = 'SUBREDDITNAME'    # Set subreddit here.  To work on multiple subs, separate them by a plus: 'subreddit+subreddit+subreddit'
 
