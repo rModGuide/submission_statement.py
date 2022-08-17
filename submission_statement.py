@@ -5,6 +5,7 @@ import re
 import sys
 import praw
 import time
+import traceback
 
 from datetime import datetime as dt, timedelta as td, date
 
@@ -28,15 +29,16 @@ def reddit_login():
     print('Connecting to reddit...')
 
     try:
-        reddit = praw.Reddit(   client_id= YOUR CLIENT ID,
-                                client_secret= YOUR CLIENT SECRET,
-                                user_agent=f'Top Comment Enforcer Bot for /r/{SUB_NAME} - v0.2 written by u/EpicMindWarp, adapted by u/BuckRowdy',
-                                username=config.username,
-                                password=config.password)
+        reddit = praw.Reddit(   client_id= 'YOUR CLIENT ID',
+                                client_secret= 'YOUR CLIENT SECRET',
+                                user_agent='Top Comment Enforcer Bot for /r/SUBREDDIT - v0.2 written by u/EpicMindWarp, adapted by u/BuckRowdy',
+                                username='YOUR_USERNAME',
+                                password='Your_Password')
 
     except Exception as e:
         print(f'\t### ERROR - Could not login.\n\t{e}')
-
+        traceback.print_exc()
+        
     print(f'Logged in as: {reddit.user.me()}')
 
     return reddit
